@@ -42,6 +42,8 @@ else()
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    udemytut1.cpp
+    udemytut1.h
     ${TS_FILES}
   )
 endif()
