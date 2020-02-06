@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="Qtqtesttut1_en_AT">
+<TS version="2.1" language="en_AT">
 <context>
     <name>MainWindow</name>
     <message>

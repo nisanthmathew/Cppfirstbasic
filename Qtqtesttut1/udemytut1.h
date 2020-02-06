@@ -2,7 +2,7 @@
 #define UDEMYTUT1_H
 
 #include <QObject>
-#include <QtTest/QTest>
+#include <iostream>
 
 class udemytut1: public QObject
 {
@@ -11,7 +11,10 @@ public:
     udemytut1();
 
 public:
-    bool myCondition();
+    std::vector<int> udvectortut1d(int input1, int input2);
+    std::vector<std::vector<int>> udvectortut2d(std::vector<int> vinput1,
+                                                std::vector<int> vinput2);
+
 
 };
 

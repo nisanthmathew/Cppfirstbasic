@@ -10,14 +10,15 @@ class Qtestudemy : public QObject
 public:
     Qtestudemy();
     ~Qtestudemy();
-
-private:
-    udemytut1 test;
+    std::vector <int> vectortest1d {10,20};
+    std::vector <std::vector<int>> vectortest2d {
+        {10, 20},
+        {10, 20}
+    };
 
 private slots:
-    void initTestCase();
-    void cleanupTestCase();
-    void test_case1();
+
+    void test_caseudvector();
 
 };
 
@@ -32,21 +33,15 @@ Qtestudemy::~Qtestudemy()
 
 }
 
-void Qtestudemy::initTestCase()
-{
 
+void Qtestudemy::test_caseudvector()
+{
+    udemytut1 test;
+    QCOMPARE(test.udvectortut1d(10,20),vectortest1d); //test case of 1d vector
+    QCOMPARE(test.udvectortut2d(vectortest1d, vectortest1d),vectortest2d); //test case for 2d vector
 }
 
-void Qtestudemy::cleanupTestCase()
-{
 
-}
-
-void Qtestudemy::test_case1()
-{
-
-    QCOMPARE(test.myCondition(),true);
-}
 
 QTEST_MAIN(Qtestudemy)
 
