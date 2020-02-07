@@ -18,7 +18,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 enable_testing()
 #including the path and source file of the function to be checked
 include_directories(H:/extralearning/udemy/cpp/Qtgitqtesttut1/Qtqtesttut1)
-add_executable(Qtestudemy H:/extralearning/udemy/cpp/Qtgitqtesttut1/Qtqtesttut1/udemytut1.cpp tst_qtestudemy.cpp)
+add_executable(Qtestudemy H:/extralearning/udemy/cpp/Qtgitqtesttut1/Qtqtesttut1/udemytut1.cpp
+    H:/extralearning/udemy/cpp/Qtgitqtesttut1/Qtqtesttut1/udemytut2.cpp
+    tst_qtestudemy.cpp)
 add_test(NAME Qtestudemy COMMAND Qtestudemy)
 
 target_link_libraries(Qtestudemy PRIVATE Qt5::Gui Qt5::Test)
