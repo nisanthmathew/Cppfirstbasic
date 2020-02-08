@@ -15,53 +15,54 @@ bool udemytut2::change_for_cents(int input_cents){
     1 nickel = 5 cents
     1 penny = 1 cent*/
 
-    int Dollar{0}, Quarter{0}, Dime{0}, Nickel{0}, Penny{0};
+    int Dollar{0}, Quarter{0}, Dime{0}, Nickel{0}, Penny{0}; // variable to store the output
+    const int Dollar_rate{100}, Quarter_rate{25}, Dime_rate{10}, Nickel_rate{5}, Penny_rate{1};
     int remaining_cents {0};
-    if(input_cents/100 == 0){
+    if(input_cents/Dollar_rate == 0){
         remaining_cents = input_cents;
         std::cout << "Dollar: " << 0 << endl;
     }
     else{
-        remaining_cents= input_cents%100;
-        Dollar = input_cents/100;
+        remaining_cents= input_cents%Dollar_rate;
+        Dollar = input_cents/Dollar_rate;
         std::cout << "Dollar: " << Dollar << endl;
     }
 
-    if(remaining_cents/25 == 0){
+    if(remaining_cents/Quarter_rate == 0){
         std::cout << "Quarter: " << 0 << endl;
     }
     else{
-        Quarter = remaining_cents/25;
-        remaining_cents = remaining_cents%25;
+        Quarter = remaining_cents/Quarter_rate;
+        remaining_cents = remaining_cents%Quarter_rate;
         std::cout << "Quarter: " << Quarter << endl;
     }
-    if(remaining_cents/10 == 0){
+    if(remaining_cents/Dime_rate == 0){
         std::cout << "Dime: " << 0 << endl;
     }
     else{
-        Dime = remaining_cents/10;
-        remaining_cents = remaining_cents%10;
+        Dime = remaining_cents/Dime_rate;
+        remaining_cents = remaining_cents%Dime_rate;
         std::cout << "Dime: " << Dime << endl;
     }
-    if(remaining_cents/5 == 0){
+    if(remaining_cents/Nickel_rate == 0){
         std::cout << "Nickel: " << 0 << endl;
     }
     else{
-        Nickel = remaining_cents/5;
-        remaining_cents = remaining_cents%5;
+        Nickel = remaining_cents/Nickel_rate;
+        remaining_cents = remaining_cents%Nickel_rate;
         std::cout << "Nickel: " << Nickel << endl;
     }
-    if(remaining_cents/1 == 0){
+    if(remaining_cents/Penny_rate == 0){
         std::cout << "Penny: " << 0 << endl;
     }
     else{
         Penny = remaining_cents;
-        remaining_cents = remaining_cents%1;
+        remaining_cents = remaining_cents%Penny_rate;
         std::cout << "Penny: " << Penny << endl;
     }
 
-    change_conversion_checker = (Dollar*100)+(Quarter*25)+(Dime*10)+
-                                (Nickel*5)+(Penny*1)+remaining_cents;
+    change_conversion_checker = (Dollar*Dollar_rate)+(Quarter*Quarter_rate)+(Dime*Dime_rate)+
+                                (Nickel*Nickel_rate)+(Penny*Penny_rate)+remaining_cents;
     if(change_conversion_checker == input_cents){
         return true;
     }
