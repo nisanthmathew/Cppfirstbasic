@@ -15,6 +15,7 @@ udemytut2::udemytut2()
 
 bool udemytut2::change_for_cents(int input_cents){
     int change_conversion_checker {0};
+    bool converion_status{false};
 
 
     int Dollar{0}, Quarter{0}, Dime{0}, Nickel{0}, Penny{0}; // variable to store the output
@@ -79,9 +80,11 @@ bool udemytut2::change_for_cents(int input_cents){
 
 
     if(change_conversion_checker == input_cents){ // returns sucess status
-        return true;
+        converion_status = true;
     }
     else {
-        return false;
+        converion_status = false;
     }
+
+    return converion_status;
 }

@@ -16,7 +16,10 @@ int main(int argc, char *argv[])
 
     /*operator challenge*/
     udemytut2 operator_challenge;
-    bool output = operator_challenge.change_for_cents(267);
+    bool status = operator_challenge.change_for_cents(267);
+    if(!status){
+        std::cerr << "failed" << std::endl;
+    }
 
     //    MainWindow w;
     //    w.show();
