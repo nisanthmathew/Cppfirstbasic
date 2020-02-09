@@ -22,6 +22,7 @@ bool udemytut2::change_for_cents(int input_cents){
     int remaining_cents {0};
 
 
+    //creating change
     if(input_cents/Dollar_rate == 0){
         remaining_cents = input_cents;
         std::cout << "Dollar: " << 0 << endl;
@@ -72,12 +73,12 @@ bool udemytut2::change_for_cents(int input_cents){
         std::cout << "Penny: " << Penny << endl;
     }
 
-
+    // checking whether the conversion was correct to return the status boolean
     change_conversion_checker = (Dollar*Dollar_rate)+(Quarter*Quarter_rate)+(Dime*Dime_rate)+
             (Nickel*Nickel_rate)+(Penny*Penny_rate)+remaining_cents;
 
 
-    if(change_conversion_checker == input_cents){
+    if(change_conversion_checker == input_cents){ // returns sucess status
         return true;
     }
     else {
