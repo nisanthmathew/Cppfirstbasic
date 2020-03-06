@@ -45,9 +45,12 @@ void Qtestudemy::test_case_vectors()
 
 void Qtestudemy::test_case_operators()
 {
-    udemytut2 operators;
-    int input_cents {267};
-    QCOMPARE(operators.change_for_cents(input_cents), true);
+    int input_cents {-20};
+    QCOMPARE(udemytut2(input_cents).change_for_cents(), true);
+    input_cents = 20;
+    QCOMPARE(udemytut2(input_cents).change_for_cents(), true);
+    input_cents = 0;
+    QCOMPARE(udemytut2(input_cents).change_for_cents(), true);
 }
 
 QTEST_MAIN(Qtestudemy)

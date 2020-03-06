@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
     //    v2d = vector_challenge.udvectortut2d(v1, v2); //returns and displays vector 2d after editing v1
 
     /*operator challenge*/
-    udemytut2 operator_challenge;
-    bool status = operator_challenge.change_for_cents(267);
+
+    bool status = udemytut2(-20).change_for_cents();
     if(!status){
         std::cerr << "failed" << std::endl;
     }

@@ -5,15 +5,21 @@
 1 nickel = 5 cents
 1 penny = 1 cent*/
 
-
 #include "udemytut2.h"
 using namespace std;
-udemytut2::udemytut2()
-{
 
+udemytut2::udemytut2(int inputcents)
+{
+    if(inputcents < 0){
+        std::cout << "please enter a positive value" << endl;
+        input_cents = 0;
+    }
+    else{
+    input_cents = inputcents;
+    }
 }
 
-bool udemytut2::change_for_cents(int input_cents){
+bool udemytut2::change_for_cents(){
     int change_conversion_checker {0};
     bool converion_status{false};
 
