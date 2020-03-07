@@ -46,6 +46,8 @@ else()
     udemytut1.h
     udemytut2.cpp
     udemytut2.h
+    udemypointerchallenge.cpp
+    udemypointerchallenge.h
     ${TS_FILES}
   )
 endif()

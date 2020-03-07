@@ -20,6 +20,7 @@ enable_testing()
 include_directories(H:/extralearning/udemy/cpp/Qtgitqtesttut1/Qtqtesttut1)
 add_executable(Qtestudemy H:/extralearning/udemy/cpp/Qtgitqtesttut1/Qtqtesttut1/udemytut1.cpp
     H:/extralearning/udemy/cpp/Qtgitqtesttut1/Qtqtesttut1/udemytut2.cpp
+    H:/extralearning/udemy/cpp/Qtgitqtesttut1/Qtqtesttut1/udemypointerchallenge.cpp
     tst_qtestudemy.cpp)
 add_test(NAME Qtestudemy COMMAND Qtestudemy)
 

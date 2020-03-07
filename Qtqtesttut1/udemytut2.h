@@ -12,6 +12,7 @@ private:
 public:
     udemytut2(int input_cents);
     std::vector<int> change_for_cents();
+    void DollarExtraction();
 };
 
 #endif // UDEMYTUT2_H

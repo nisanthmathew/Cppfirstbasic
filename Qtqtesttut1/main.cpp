@@ -3,6 +3,7 @@
 #include <QDebug>
 #include "udemytut1.h"
 #include "udemytut2.h"
+#include "udemypointerchallenge.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -16,13 +17,23 @@ int main(int argc, char *argv[])
 
     /*operator challenge*/
 
-    bool status = udemytut2(-20).change_for_cents();
-    if(!status){
-        std::cerr << "failed" << std::endl;
+   //   udemytut2(-20).change_for_cents();
+
+    /*pointer challenge*/
+    int array1[] = {1,-2,1};
+    int array2[] = {4,5,6};
+    size_t array1size {3};
+    size_t array2size {3};
+    udemypointerchallenge arraycreator;
+    int *output{};
+    output = new int[array1size*array2size];
+    output = arraycreator.getnewarray(array1,array1size,array2,array2size);
+    for(size_t j = 0; j < array2size*array1size; j++){
+        std::cout << output[j] << " ";
     }
 
-    //    MainWindow w;
-    //    w.show();
+    std::cout << std::endl;
+
     return a.exec();
 }
 
