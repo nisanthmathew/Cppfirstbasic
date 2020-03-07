@@ -11,7 +11,7 @@ private:
     int input_cents{0};
 public:
     udemytut2(int input_cents);
-    bool change_for_cents();
+    std::vector<int> change_for_cents();
 };
 
 #endif // UDEMYTUT2_H

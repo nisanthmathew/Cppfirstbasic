@@ -45,12 +45,28 @@ void Qtestudemy::test_case_vectors()
 
 void Qtestudemy::test_case_operators()
 {
-    int input_cents {-20};
-    QCOMPARE(udemytut2(input_cents).change_for_cents(), true);
-    input_cents = 20;
-    QCOMPARE(udemytut2(input_cents).change_for_cents(), true);
+    /*conversion rates
+    1 Dollar = 100 cents
+    1 quarter = 25 cents
+    1 dime = 10 cents
+    1 nickel = 5 cents
+    1 penny = 1 cent*/
+
+    int input_cents {100};
+    std::vector <int> xpected_out {1,0,0,0,0};
+    udemytut2 tester {input_cents};
+    QCOMPARE(tester.change_for_cents(), xpected_out);
+
+    input_cents = -100;
+    xpected_out = {0,0,0,0,0};
+    udemytut2 tester2 {input_cents};
+    QCOMPARE(tester2.change_for_cents(), xpected_out);
+
     input_cents = 0;
-    QCOMPARE(udemytut2(input_cents).change_for_cents(), true);
+    xpected_out = {0,0,0,0,0};
+    udemytut2 tester3 {input_cents};
+    QCOMPARE(tester3.change_for_cents(), xpected_out);
+
 }
 
 QTEST_MAIN(Qtestudemy)
