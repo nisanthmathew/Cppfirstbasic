@@ -15,7 +15,7 @@ public:
     ~MyString();
     void display(std::ostream& outstream) const; // display string length
     int getlength() const;
-    char* getmystring() const;
+    const char* getmystring() const;
 signals:
 
 };

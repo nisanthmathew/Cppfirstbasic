@@ -34,7 +34,7 @@ int MyString::getlength() const
     return strlen(mystr);
 }
 
-char *MyString::getmystring() const
+const char* MyString::getmystring() const
 {
     return mystr;
 }
