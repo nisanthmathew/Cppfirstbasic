@@ -1,10 +1,13 @@
 #include <QtTest>
 #include <QCoreApplication>
-
+#include <iostream>
+#include <sstream>
 // add necessary includes here
 #include "udemytut1.h"
 #include "udemytut2.h"
 #include "udemypointerchallenge.h"
+#include "mystring.h"
+
 
 class Qtestudemy : public QObject
 {
@@ -22,6 +25,9 @@ private slots:
     void test_case_operators_zero();
     void test_case_pointers_init();
     void test_case_pointers_arraycreator();
+    void test_case_operatoroverloading_mystring_empty();
+    void test_case_operatoroverloading_mystring_normal();
+    void test_case_operatoroverloading_mystring_copy();
 };
 
 
@@ -90,6 +96,33 @@ void Qtestudemy::test_case_pointers_arraycreator(){
     }
 }
 
+void Qtestudemy::test_case_operatoroverloading_mystring_empty(){
+    MyString operatoroverloading;
+    std::ostringstream out;
+    operatoroverloading.display(out);
+    QCOMPARE(out.str(),"\n");
+    QCOMPARE(operatoroverloading.getlength(),0);
+    QCOMPARE(operatoroverloading.getmystring(),"\0");
+}
+
+void Qtestudemy::test_case_operatoroverloading_mystring_normal(){
+    MyString operatoroverloading{"Helo"};
+    std::ostringstream out;
+    operatoroverloading.display(out);
+    QCOMPARE(out.str(),"Helo\n");
+    QCOMPARE(operatoroverloading.getlength(),4);
+    QCOMPARE(operatoroverloading.getmystring(),"Helo");
+}
+
+void Qtestudemy::test_case_operatoroverloading_mystring_copy(){
+    MyString operatoroverloading{"Helo"};
+    MyString operatoroverloading_copy{operatoroverloading};
+    std::ostringstream out;
+    operatoroverloading_copy.display(out);
+    QCOMPARE(out.str(),"Helo\n");
+    QCOMPARE(operatoroverloading_copy.getlength(),4);
+    QCOMPARE(operatoroverloading_copy.getmystring(),"Helo");
+}
 
 QTEST_MAIN(Qtestudemy)
 

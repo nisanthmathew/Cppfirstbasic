@@ -48,6 +48,8 @@ else()
     udemytut2.h
     udemypointerchallenge.cpp
     udemypointerchallenge.h
+    mystring.cpp
+    mystring.h
     ${TS_FILES}
   )
 endif()
