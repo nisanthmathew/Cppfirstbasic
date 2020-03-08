@@ -1,13 +1,10 @@
 #include "udemypointerchallenge.h"
 
 udemypointerchallenge::udemypointerchallenge( )
-{
-
-}
+{}
 
 int* udemypointerchallenge::getnewarray(const int *array1, const size_t array1size,
                                         const int *array2, const size_t array2size){
-
     int *result {};
     result = new int[array1size*array2size];
     size_t resultsize {0};
@@ -17,6 +14,5 @@ int* udemypointerchallenge::getnewarray(const int *array1, const size_t array1si
             resultsize++;
         }
     }
-
     return result; // return pointer on heap
 }
