@@ -39,14 +39,21 @@ int main(int argc, char *argv[])
     /*operator overload section mystring*/
     MyString empty;
     MyString Nisanth{"Hello Nisanth"};
-    MyString Nisanth_Clone{Nisanth};
+    MyString Nisanth_Clone{empty};
     std::ostringstream out;
     empty.display(out);
     Nisanth.display(out);
     Nisanth_Clone.display(out);
-
-
     std::cout << out.str() << std::endl;
+
+    empty = Nisanth;
+    Nisanth_Clone = Nisanth;
+    Nisanth = "Test successfull";
+    std::ostringstream outtest;
+    empty.display(outtest);
+    Nisanth.display(outtest);
+    Nisanth_Clone.display(outtest);
+    std::cout << outtest.str() << std::endl;
 
     return a.exec();
 }

@@ -13,9 +13,11 @@ public:
     MyString(const char* normalstr); // overloaded constructor
     MyString(MyString &copystring); // copy constructor
     ~MyString();
-    void display(std::ostream& outstream) const; // display string length
-    int getlength() const;
-    const char* getmystring() const;
+
+    void display(std::ostream& outstream) const; // display string
+    int getlength() const; // display string length
+    const char* getmystring() const; // get string
+    MyString &operator=(const MyString &rhs); // assignment operator overloading
 signals:
 
 };

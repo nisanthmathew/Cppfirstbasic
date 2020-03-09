@@ -39,6 +39,19 @@ const char* MyString::getmystring() const
     return mystr;
 }
 
+MyString &MyString::operator=(const MyString &rhs)
+{
+    if(this == &rhs){
+        return *this; // return the object if the rhs is the same object
+    }
+
+    delete [] this->mystr; // deallocate memory on heap to prevent memory leak
+    this->mystr = new char[strlen(rhs.mystr)+1];
+    strcpy(this->mystr,rhs.mystr);
+    return *this;
+
+}
+
 void MyString::display(std::ostream& outstream) const // display the sting
 {
     outstream << mystr << std::endl;
