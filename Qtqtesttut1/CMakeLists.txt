@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(Qtqtesttut1 LANGUAGES CXX)
+project(Qtudemytutorial LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -26,10 +26,10 @@ enable_testing(true)
 
 find_package(Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 
-set(TS_FILES Qtqtesttut1_en_AT.ts)
+set(TS_FILES Qtudemytutorial_en_AT.ts)
 
 if(ANDROID)
-  add_library(Qtqtesttut1 SHARED
+  add_library(Qtudemytutorial SHARED
     main.cpp
     mainwindow.cpp
     mainwindow.h
@@ -37,7 +37,7 @@ if(ANDROID)
     ${TS_FILES}
   )
 else()
-  add_executable(Qtqtesttut1
+  add_executable(Qtudemytutorial
     main.cpp
     mainwindow.cpp
     mainwindow.h
@@ -54,6 +54,6 @@ else()
   )
 endif()
 
-target_link_libraries(Qtqtesttut1 PRIVATE Qt5::Widgets)
+target_link_libraries(Qtudemytutorial PRIVATE Qt5::Widgets)
 
 qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
