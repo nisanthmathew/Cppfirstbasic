@@ -29,6 +29,7 @@ private slots:
     void test_case_operatoroverloading_mystring_normal();
     void test_case_operatoroverloading_mystring_copy();
     void test_case_operatoroverloading_assignmentop();
+    void test_case_operatoroverloading_moveop();
 };
 
 
@@ -133,9 +134,15 @@ void Qtestudemy::test_case_operatoroverloading_assignmentop(){
     operatoroverloading_copy = operatoroverloading;
     QCOMPARE(operatoroverloading_empty.getmystring(),operatoroverloading.getmystring());
     QCOMPARE(operatoroverloading_copy.getmystring(),operatoroverloading.getmystring());
-    operatoroverloading_empty = "Helo Test";
-    QCOMPARE(operatoroverloading_empty.getmystring(),"Helo Test");
+
 }
+
+void Qtestudemy::test_case_operatoroverloading_moveop(){
+    MyString operatoroverloading{"Hello Move Constructor"};
+    operatoroverloading = MyString {"testing"};
+    QCOMPARE(operatoroverloading.getmystring(),"testing");
+    operatoroverloading = "Hello move 2";
+   }
 
 QTEST_MAIN(Qtestudemy)
 
