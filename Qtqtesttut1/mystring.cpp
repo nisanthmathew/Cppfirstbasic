@@ -99,6 +99,16 @@ MyString MyString::operator+(const MyString &rhs) const
 
 }
 
+bool MyString::operator==(const MyString &rhs) const
+{
+    if(strcmp(this->mystr,rhs.mystr)==0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 void MyString::display(std::ostream& outstream) const // display the sting
 {
     outstream << mystr << std::endl;

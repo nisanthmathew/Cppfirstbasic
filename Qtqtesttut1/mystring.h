@@ -24,6 +24,7 @@ public:
     MyString &operator=(MyString &&rhs); //move operator overloading
     MyString operator-() const; //unary operators takes no argument while bunary requires one
     MyString operator+(const MyString &rhs) const; //addition operator overloading for concatanation
+    bool operator==(const MyString &rhs) const; //comparison operator overloading for string comparison
 
 signals:
 
