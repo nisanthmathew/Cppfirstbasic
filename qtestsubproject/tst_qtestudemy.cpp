@@ -35,6 +35,8 @@ private slots:
     void test_case_operatoroverloading_negationemptystringcase();
     void test_case_operatoroverloading_additionop();
     void test_case_operatoroverloading_additionop_empty();
+    void test_case_operatoroverloading_comparisonop();
+    void test_case_operatoroverloading_comparisonop_empty();
 };
 
 
@@ -178,6 +180,17 @@ void Qtestudemy::test_case_operatoroverloading_additionop_empty(){ //empty case 
     QCOMPARE(concatenated.getmystring(),"hi there");
 }
 
+void Qtestudemy::test_case_operatoroverloading_comparisonop(){ //normal test case
+    MyString object1forcomparison{"Hello1 Hello2"};
+    MyString object2forcomparison{"Hello1 Hello2"};
+    QCOMPARE(object1forcomparison==object2forcomparison,true);
+}
+
+void Qtestudemy::test_case_operatoroverloading_comparisonop_empty(){ //empty test case
+    MyString object1forcomparison;
+    MyString object2forcomparison{""};
+    QCOMPARE(object1forcomparison==object2forcomparison,true);
+}
 QTEST_MAIN(Qtestudemy)
 
 #include "tst_qtestudemy.moc"
