@@ -87,6 +87,18 @@ MyString MyString::operator-() const
     return temp;
 }
 
+MyString MyString::operator+(const MyString &rhs) const
+{
+    size_t buffersize = strlen(mystr)+strlen(rhs.mystr)+1;
+    char *buffer = new char[buffersize];
+    strcpy(buffer,this->mystr);
+    strcat(buffer, rhs.mystr);
+    MyString temp{buffer};
+    delete [] buffer;
+    return temp;
+
+}
+
 void MyString::display(std::ostream& outstream) const // display the sting
 {
     outstream << mystr << std::endl;
