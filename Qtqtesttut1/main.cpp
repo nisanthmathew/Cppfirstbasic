@@ -55,6 +55,9 @@ int main(int argc, char *argv[])
     Nisanth_Clone.display(outtest);
     std::cout << outtest.str() << std::endl;
 
+    MyString objectfornegation{"HELLO OBJECT FOR NEGATION"};
+    MyString negatedobject = -objectfornegation;
+
     return a.exec();
 }
 

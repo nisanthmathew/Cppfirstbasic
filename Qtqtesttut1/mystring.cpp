@@ -75,6 +75,18 @@ MyString &MyString::operator=(MyString &&rhs)
     return *this;
 }
 
+MyString MyString::operator-() const
+{
+    char *buffer = new char[strlen(mystr)+1];
+    strcpy(buffer,mystr);
+    for(size_t i=0; i<strlen(buffer); i++){
+        buffer[i] = std::tolower(buffer[i]);
+    }
+    MyString temp{buffer};
+    delete [] buffer;
+    return temp;
+}
+
 void MyString::display(std::ostream& outstream) const // display the sting
 {
     outstream << mystr << std::endl;
