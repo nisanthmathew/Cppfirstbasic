@@ -18,10 +18,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 enable_testing()
 #including the path and source file of the function to be checked
 include_directories(H:/extralearning/udemy/cpp/Udemy_Tutorial_Qtest/Qtqtesttut1)
-add_executable(Qtestudemy H:/extralearning/udemy/cpp/Udemy_Tutorial_Qtest/Qtqtesttut1/udemytut1.cpp
-    H:/extralearning/udemy/cpp/Udemy_Tutorial_Qtest/Qtqtesttut1/udemytut2.cpp
-    H:/extralearning/udemy/cpp/Udemy_Tutorial_Qtest/Qtqtesttut1/udemypointerchallenge.cpp
-    H:/extralearning/udemy/cpp/Udemy_Tutorial_Qtest/Qtqtesttut1/mystring.cpp
+add_executable(Qtestudemy H:/extralearning/udemy/cpp/Udemy_Tutorial_Qtest/Qtudemytutorial/udemytut1.cpp
+    H:/extralearning/udemy/cpp/Udemy_Tutorial_Qtest/Qtudemytutorial/udemytut2.cpp
+    H:/extralearning/udemy/cpp/Udemy_Tutorial_Qtest/Qtudemytutorial/udemypointerchallenge.cpp
+    H:/extralearning/udemy/cpp/Udemy_Tutorial_Qtest/Qtudemytutorial/mystring.cpp
 
     tst_qtestudemy.cpp)
 add_test(NAME Qtestudemy COMMAND Qtestudemy)
