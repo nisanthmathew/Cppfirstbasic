@@ -33,6 +33,8 @@ private slots:
     void test_case_operatoroverloading_negationop();
     void test_case_operatoroverloading_negationmixedcase();
     void test_case_operatoroverloading_negationemptystringcase();
+    void test_case_operatoroverloading_additionop();
+    void test_case_operatoroverloading_additionop_empty();
 };
 
 
@@ -161,6 +163,21 @@ void Qtestudemy::test_case_operatoroverloading_negationmixedcase(){ //mixed case
     MyString negatedobject3 = -objectfornegation3;
     QCOMPARE(negatedobject3.getmystring(),"hello");
 }
+
+void Qtestudemy::test_case_operatoroverloading_additionop(){ //normal test case
+    MyString objectforconcatanation{"Hello1 Hello2"};
+    MyString concatenated = objectforconcatanation + objectforconcatanation;
+    QCOMPARE(concatenated.getmystring(),"Hello1 Hello2Hello1 Hello2");
+}
+
+void Qtestudemy::test_case_operatoroverloading_additionop_empty(){ //empty case test
+    MyString objectforconcatanation;
+    MyString object2forconcatanation{""};
+    MyString object3forconcatanation{"hi there"};
+    MyString concatenated = objectforconcatanation + object2forconcatanation + object3forconcatanation;
+    QCOMPARE(concatenated.getmystring(),"hi there");
+}
+
 QTEST_MAIN(Qtestudemy)
 
 #include "tst_qtestudemy.moc"
