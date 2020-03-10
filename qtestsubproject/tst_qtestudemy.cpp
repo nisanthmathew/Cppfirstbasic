@@ -30,6 +30,9 @@ private slots:
     void test_case_operatoroverloading_mystring_copy();
     void test_case_operatoroverloading_assignmentop();
     void test_case_operatoroverloading_moveop();
+    void test_case_operatoroverloading_negationop();
+    void test_case_operatoroverloading_negationmixedcase();
+    void test_case_operatoroverloading_negationemptystringcase();
 };
 
 
@@ -98,7 +101,7 @@ void Qtestudemy::test_case_pointers_arraycreator(){
     }
 }
 
-void Qtestudemy::test_case_operatoroverloading_mystring_empty(){
+void Qtestudemy::test_case_operatoroverloading_mystring_empty(){ //mystring class no args constructor test
     MyString operatoroverloading;
     std::ostringstream out;
     operatoroverloading.display(out);
@@ -107,7 +110,7 @@ void Qtestudemy::test_case_operatoroverloading_mystring_empty(){
     QCOMPARE(operatoroverloading.getmystring(),"\0");
 }
 
-void Qtestudemy::test_case_operatoroverloading_mystring_normal(){
+void Qtestudemy::test_case_operatoroverloading_mystring_normal(){ //mystring class overloaded constructor test
     MyString operatoroverloading{"Helo"};
     std::ostringstream out;
     operatoroverloading.display(out);
@@ -116,7 +119,7 @@ void Qtestudemy::test_case_operatoroverloading_mystring_normal(){
     QCOMPARE(operatoroverloading.getmystring(),"Helo");
 }
 
-void Qtestudemy::test_case_operatoroverloading_mystring_copy(){
+void Qtestudemy::test_case_operatoroverloading_mystring_copy(){ //mystring class copy constructor test
     MyString operatoroverloading{"Helo"};
     MyString operatoroverloading_copy{operatoroverloading};
     std::ostringstream out;
@@ -126,7 +129,7 @@ void Qtestudemy::test_case_operatoroverloading_mystring_copy(){
     QCOMPARE(operatoroverloading_copy.getmystring(),"Helo");
 }
 
-void Qtestudemy::test_case_operatoroverloading_assignmentop(){
+void Qtestudemy::test_case_operatoroverloading_assignmentop(){ //assignment operator copy test
     MyString operatoroverloading{"Helo"};
     MyString operatoroverloading_empty;
     MyString operatoroverloading_copy{operatoroverloading_empty};
@@ -137,13 +140,27 @@ void Qtestudemy::test_case_operatoroverloading_assignmentop(){
 
 }
 
-void Qtestudemy::test_case_operatoroverloading_moveop(){
+void Qtestudemy::test_case_operatoroverloading_moveop(){ //assignmet operator overload move test
     MyString operatoroverloading{"Hello Move Constructor"};
     operatoroverloading = MyString {"testing"};
     QCOMPARE(operatoroverloading.getmystring(),"testing");
     operatoroverloading = "Hello move 2";
    }
-
+void Qtestudemy::test_case_operatoroverloading_negationop(){ //negation test
+    MyString objectfornegation1{"HELLO OBJECT FOR NEGATION"};
+    MyString negatedobject1 = -objectfornegation1;
+    QCOMPARE(negatedobject1.getmystring(),"hello object for negation");
+   }
+void Qtestudemy::test_case_operatoroverloading_negationemptystringcase(){ //edge case empty string test
+    MyString objectfornegation2;
+    MyString negatedobject2 = -objectfornegation2;
+    QCOMPARE(negatedobject2.getmystring(),"");
+    }
+void Qtestudemy::test_case_operatoroverloading_negationmixedcase(){ //mixed case test
+    MyString objectfornegation3{"Hello"};
+    MyString negatedobject3 = -objectfornegation3;
+    QCOMPARE(negatedobject3.getmystring(),"hello");
+}
 QTEST_MAIN(Qtestudemy)
 
 #include "tst_qtestudemy.moc"
