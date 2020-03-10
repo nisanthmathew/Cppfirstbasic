@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <iostream>
+#include <cctype>
 class MyString : public QObject
 {
     Q_OBJECT
@@ -18,8 +19,11 @@ public:
     void display(std::ostream& outstream) const; // display string
     int getlength() const; // display string length
     const char* getmystring() const; // get string
+
     MyString &operator=(const MyString &rhs); // assignment operator overloading
     MyString &operator=(MyString &&rhs); //move operator overloading
+    MyString operator-() const; //unary operators takes no argument while bunary requires one
+
 
 signals:
 
